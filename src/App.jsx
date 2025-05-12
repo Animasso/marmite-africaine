@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import NavBar from "./components/Navbar.jsx";
-import Hero from "./components/hero.jsx";
+import Hero from "./components/Hero.jsx";
 import Horaire from "./components/Horaire.jsx";
 import Contact from "./components/Contact.jsx";
 import Services from "./pages/Services.jsx";
