@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { motion } from "framer-motion";
 
 import Alloco from "../assets/AfriquePlat/Afrique/alloco.jpg";
 import Foufou from "../assets/AfriquePlat/Afrique/foufou.jpg";
@@ -26,9 +27,14 @@ const images = [
 const SwiperGallery = () => {
   return (
     <div className="max-w-5xl mx-auto my-20 px-4">
-      <h2 className="text-3xl font-title font-bold text-[#8b0000] text-center mb-10">
-        Nos Plats Africains
-      </h2>
+      <motion.h2
+        initial={{ opacity: 0, x: -150 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        className="text-3xl font-title font-bold text-[#8b0000] text-center mb-10"
+      >
+        Les Plats Favoris
+      </motion.h2>
       <Swiper
         spaceBetween={20}
         centeredSlides={true}

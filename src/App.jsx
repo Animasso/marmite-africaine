@@ -8,6 +8,8 @@ import Contact from "./components/Contact.jsx";
 import Services from "./pages/Services.jsx";
 import Menus from "./pages/Menus.jsx";
 import SwiperGallery from "./components/SwiperGallery.jsx";
+import Bar from "./pages/Bar.jsx";
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
   return (
@@ -28,7 +30,9 @@ const App = () => {
           />
           <Route path="/menu" element={<Menus />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/bar" element={<Bar />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

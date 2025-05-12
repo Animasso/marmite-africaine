@@ -40,15 +40,6 @@ const Header = ({ setModalOpen }) => {
               Menu
             </Link>
           </li>
-
-          <li>
-            <HashLink
-              to="/#contact"
-              className="hover:underline hover:text-yellow-300 transition"
-            >
-              Contact
-            </HashLink>
-          </li>
           <li>
             <Link
               to="/services"
@@ -56,6 +47,22 @@ const Header = ({ setModalOpen }) => {
             >
               Services
             </Link>
+          </li>
+          <li>
+            <Link
+              to="/bar"
+              className="hover:underline hover:text-yellow-300 transition"
+            >
+              Bar
+            </Link>
+          </li>
+          <li>
+            <HashLink
+              to="/#contact"
+              className="hover:underline hover:text-yellow-300 transition"
+            >
+              Contact
+            </HashLink>
           </li>
         </ul>
       </nav>

@@ -1,22 +1,41 @@
 import RestoPhoto from "../assets/interieurresto.jpg";
+import { motion } from "framer-motion";
 
 const Horaire = () => {
   return (
-    <section className=" mt-26 ">
-      <h2 className=" font-title font-bold text-3xl text-white tracking-wider  text-center">
+    <section className=" mt-26 overflow-hidden ">
+      <motion.h2
+        initial={{ opacity: 0, x: 150 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        className=" font-title font-bold text-3xl text-white tracking-wider  text-center"
+      >
         Horaires d'ouverture
-      </h2>
-      <p className=" text-white font-title text-xl text-center mt-4">
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0, x: 150 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.5 }}
+        className=" text-white font-title text-xl text-center mt-4"
+      >
         {" "}
         Nous vous recevons dans notre restaurant de 70 places
-      </p>
+      </motion.p>
       <div className=" grid grid-cols-1 md:grid-cols-2 mt-20 items-center justify-items-center gap-4">
-        <img
+        <motion.img
+          initial={{ opacity: 0, y: -150 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5 }}
           src={RestoPhoto}
           className=" object-cover rounded-3xl w-96 h-96 border border-white shadow-2xl"
           alt="restaurant"
         />
-        <div className="max-w-2xl mx-auto mt-10 bg-white shadow-lg rounded-lg p-6">
+        <motion.div
+          initial={{ opacity: 0, y: 150 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5 }}
+          className="max-w-2xl mx-auto mt-10 bg-white shadow-lg rounded-lg p-6"
+        >
           <h2 className="text-2xl font-bold text-center text-[#8b0000] mb-4">
             Horaires d'ouverture
           </h2>
@@ -42,7 +61,7 @@ const Horaire = () => {
               </tr>
             </tbody>
           </table>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

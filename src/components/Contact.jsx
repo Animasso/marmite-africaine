@@ -1,17 +1,34 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 const Contact = () => {
   const [name, setName] = useState("");
   const [prenom, setPrenom] = useState("");
   const [email, setEmail] = useState("");
   const [messageForm, setMessageForm] = useState(false);
+  const [error, setError] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name.trim() || !prenom.trim() || !email.trim()) {
+      setError(true);
+      return;
+    }
+    setMessageForm(true);
+    setError(false);
+  };
+
   return (
-    <div
+    <section
       id="contact"
-      className="grid grid-cols-1 md:grid-cols-2 gap-10 p-6 mt-40 text-white font-title"
+      className=" overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-10 p-6 mt-40 text-white font-title"
     >
-      {/* Formulaire à gauche */}
+      {/* Formulaire */}
       {!messageForm ? (
-        <form className="bg-white max-w-[600px] text-black rounded-xl shadow-lg p-6">
+        <motion.form
+          initial={{ opacity: 0, y: -150 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5 }}
+          className="bg-white max-w-[600px] text-black rounded-xl shadow-lg p-6"
+        >
           <h2 className="text-2xl font-bold mb-6 text-center text-[#8b0000]">
             Contactez-nous
           </h2>
@@ -53,11 +70,14 @@ const Contact = () => {
               rows="4"
               className="border border-gray-300 rounded p-2"
             ></textarea>
-
+            {error && (
+              <p className="text-red-500 italic mt-3">
+                Veuilez remplir tous les champs
+              </p>
+            )}
             <button
               onClick={(e) => {
-                e.preventDefault();
-                setMessageForm(true);
+                handleSubmit(e);
               }}
               type="submit"
               className="bg-red-600 text-white p-2 rounded hover:bg-red-700 transition"
@@ -65,7 +85,7 @@ const Contact = () => {
               Envoyer
             </button>
           </div>
-        </form>
+        </motion.form>
       ) : (
         <div className="bg-white max-w-[600px] text-black rounded-xl shadow-lg p-6">
           <h2 className="text-2xl font-bold mb-6 text-center text-[#8b0000]">
@@ -83,7 +103,7 @@ const Contact = () => {
         </div>
       )}
 
-      {/* Informations à droite */}
+      {/* Informations */}
       <div className="flex flex-col justify-center gap-4">
         <h2 className="text-2xl font-semibold">Adresse</h2>
         <p>123 Rue de la Gastronomie, Paris, France</p>
@@ -98,7 +118,7 @@ const Contact = () => {
           conviviale, inspirée des traditions africaines.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 
