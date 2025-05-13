@@ -10,7 +10,7 @@ const Footer = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
-        className="container flex justify-between items-center"
+        className="container flex flex-col md:flex-row  justify-between items-center"
       >
         {/* logo */}
         <div className="flex ml-3 items-center gap-2 text-2xl font-bold uppercase">
@@ -22,14 +22,15 @@ const Footer = () => {
           <p className=" font-title">La Marmite Africaine</p>
         </div>
         {/* social */}
-        <div className=" text-3xl flex items-center gap-4 mt-6 text-white">
+
+        {/* copyright */}
+        <div className="text-xs max-md:mt-2 text-center ">
+          &copy; 2025 La Marmite Africaine. Tous droits réservés.AsidProd
+        </div>
+        <div className="mr-5 text-3xl flex items-center gap-4 mt-6 text-white">
           <FaInstagram className=" hover:text-[#8b0000]" />
           <FaFacebookF className=" hover:text-[#8b0000]" />
           <FaTwitter className=" hover:text-[#8b0000]" />
-        </div>
-        {/* copyright */}
-        <div className="text-xs text-center mr-3">
-          &copy; 2025 La Marmite Africaine. Tous droits réservés.AsidProd
         </div>
       </motion.div>
     </footer>
